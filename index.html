@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshTrack | Food Waste Prevention</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">SMART FOOD MANAGEMENT</p>
+      <h1>🥬 FreshTrack</h1>
+      <p>Track freshness. Reduce waste. Save food.</p>
+    </div>
+    <span class="hero-tag">Fresh living starts here</span>
+  </header>
+
+  <main class="container">
+    <section class="stats">
+      <article class="stat-card">
+        <span>Total Items</span>
+        <strong id="totalCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Expiring Soon</span>
+        <strong id="soonCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Expired Items</span>
+        <strong id="expiredCount">0</strong>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Add Food Item</h2>
+      <form id="foodForm">
+        <div class="form-grid">
+          <label>Food name
+            <input id="foodName" placeholder="e.g. Milk" required maxlength="60">
+          </label>
+
+          <label>Category
+            <select id="category">
+              <option>Fruits</option>
+              <option>Vegetables</option>
+              <option>Dairy</option>
+              <option>Grains</option>
+              <option>Cooked Food</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>Quantity
+            <input id="quantity" placeholder="e.g. 2 packets" required maxlength="40">
+          </label>
+
+          <label>Expiry date
+            <input id="expiryDate" type="date" required>
+          </label>
+        </div>
+        <button class="primary-btn" type="submit">+ Add to Inventory</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>Your Food Inventory</h2>
+          <p>Use the status to decide what needs attention first.</p>
+        </div>
+        <select id="filter">
+          <option value="all">All items</option>
+          <option value="soon">Expiring soon</option>
+          <option value="expired">Expired</option>
+          <option value="fresh">Fresh</option>
+        </select>
+      </div>
+      <div id="alertBox" class="alerts" aria-live="polite"></div>
+      <div id="foodList" class="food-list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>🍲 Recipe Assistant</h2>
+      <p class="muted">Get simple ideas based on your non-expired inventory.</p>
+      <button id="recipeBtn" class="secondary-btn" type="button">
+        Suggest Recipes
+      </button>
+      <div id="recipeResults" class="recipe-results"></div>
+    </section>
+
+    <footer>
+      FreshTrack · A mini project for food waste prevention
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
